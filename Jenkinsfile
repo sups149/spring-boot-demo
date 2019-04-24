@@ -5,8 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo "${env.WORKSPACE}"
-                //sh 'gradlew clean build'
+                sh "${env.WORKSPACE}/gradlew clean build"
             }
         }
         stage('Test') {
