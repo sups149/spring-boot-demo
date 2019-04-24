@@ -8,6 +8,6 @@ public class DemoController {
 
     @RequestMapping("/test")
     public String getReq() {
-        return "Hello World";
+        return "Hello World Jenkins";
     }
 }
