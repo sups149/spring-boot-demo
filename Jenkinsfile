@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo '$workspace'
+                echo $workspace
                 //sh 'gradlew clean build'
             }
         }
