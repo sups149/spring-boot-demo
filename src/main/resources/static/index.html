@@ -1,0 +1,82 @@
+<html>
+<head>
+    <!--<style link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">--></style>
+
+    <style type="text/css">
+
+    table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+    }
+
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <!--<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">--></script>
+    <script type="text/javascript">
+        function fun() {
+            <!--alert("Start");-->
+            $.ajax({
+                url: "/employees",
+                contentType: "application/json; charset=utf-8",
+                type: "GET",
+                success: function (data) {
+                    <!--alert(data);-->
+                    var result = "";
+                    $.each(data, function(k, v) {
+                        result +="<tr class = 'employee_data'><td>"+ data[k].empNo + "</td><td>" + data[k].eName + "</td></tr>";
+                    });
+                    if ($(".employee_data").length) {
+                         $(".employee_data").remove();
+                    }
+                    $("#employee_tab").append(result);
+                },
+                 error: function (x, y, z) {
+                    alert(x.responseText +"  " +x.status);
+                }
+            });
+            return true;
+            alert("End");
+        }
+
+        function test(){
+            var testObj = [
+                            {
+                            empNo: 7698,
+                            eName: "BLAKE"
+                            },
+                            {
+                            empNo: 7839,
+                            eName: "KING"
+                            }
+                          ];
+
+            var result = "";
+            $.each(testObj, function(k, v) {
+                result +="<tr class = 'employee_data'><td>"+ testObj[k].empNo + "</td><td>" + testObj[k].eName + "</td></tr>";
+            });
+            if ($(".employee_data").length) {
+                $(".employee_data").remove();
+            }
+            $("#employee_tab").append(result);
+        }
+    </script>
+
+
+</head>
+<body>
+<h3> Employee Details</h3>
+<p>Please click on the below button to get the employee details</p>
+<input type="button" value="Click Here" id="btn_submit" onclick ="return fun()">
+<br><br>
+<table id="employee_tab" style="width:50% align:center">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+    </tr>
+</table>
+</body>
+</html>
+
+
+
+
