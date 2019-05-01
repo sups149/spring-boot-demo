@@ -1,0 +1,11 @@
+server:
+  port: 8085
+
+spring:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+  datasource:
+    url: jdbc:mysql://23.100.14.144:3306/cmadb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: cmamysql
+    password: K0lkata123
