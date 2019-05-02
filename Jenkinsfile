@@ -6,7 +6,8 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh "chmod -R 777 ${env.WORKSPACE}"
-                sh "${env.WORKSPACE}/gradlew clean build"
+                sh "cd ${env.WORKSPACE}"
+                sh "$gradlew clean build"
             }
         }
         stage('Test') {
