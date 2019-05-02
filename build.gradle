@@ -23,6 +23,9 @@ sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
+	maven{
+		url 'http://nexus.saas.hand-china.com/content/repositories/rdc/'
+	}
 }
 
 dependencies {
