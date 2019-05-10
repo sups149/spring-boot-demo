@@ -3,6 +3,6 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://137.117.238.208:3306/cmadb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://40.115.13.141:3306/cmadb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: cmamysql
     password: K0lkata123
